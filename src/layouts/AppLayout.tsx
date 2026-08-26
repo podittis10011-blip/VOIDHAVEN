@@ -2,6 +2,8 @@
 // 所有页面共有的结构
 
 import { Outlet } from 'react-router-dom';
+import { SiteFooter } from '../components/SiteFooter';
+import { SiteHeader } from '../components/SiteHeader';
 
 export function AppLayout() {
   return (
@@ -10,9 +12,13 @@ export function AppLayout() {
         跳至主要内容
       </a>
 
+       <SiteHeader />
+
       <main className="site-main" id="main-content">
         <Outlet />
       </main>
+      
+      <SiteFooter />
     </div>
   );
 }
