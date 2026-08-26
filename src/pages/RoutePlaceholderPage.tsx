@@ -3,10 +3,7 @@ interface RoutePlaceholderPageProps {
   description: string;
 }
 
-export function RoutePlaceholderPage({
-  title,
-  description,
-}: RoutePlaceholderPageProps) {
+export function RoutePlaceholderPage({ title, description }: RoutePlaceholderPageProps) {
   return (
     <section className="page page--centered" aria-labelledby="placeholder-title">
       <p className="eyebrow">VOIDHAVEN · DEVELOPMENT</p>

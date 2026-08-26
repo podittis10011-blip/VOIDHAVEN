@@ -24,10 +24,7 @@ const router = createBrowserRouter([
       {
         path: 'teams',
         element: (
-          <RoutePlaceholderPage
-            title="组队"
-            description="组队列表与详情将在第 5 阶段实现。"
-          />
+          <RoutePlaceholderPage title="组队" description="组队列表与详情将在第 5 阶段实现。" />
         ),
       },
       {

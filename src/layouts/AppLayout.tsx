@@ -12,12 +12,12 @@ export function AppLayout() {
         跳至主要内容
       </a>
 
-       <SiteHeader />
+      <SiteHeader />
 
       <main className="site-main" id="main-content">
         <Outlet />
       </main>
-      
+
       <SiteFooter />
     </div>
   );

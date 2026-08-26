@@ -1,9 +1,5 @@
 import { Link } from 'react-router-dom';
-import type {
-  CompetitionCategory,
-  CompetitionStatus,
-  CompetitionSummary,
-} from '../types/domain';
+import type { CompetitionCategory, CompetitionStatus, CompetitionSummary } from '../types/domain';
 import { formatLocalDate } from '../utils/format';
 
 interface CompetitionCardProps {

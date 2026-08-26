@@ -8,6 +8,7 @@ interface UseAsyncDataResult<T> {
 
 export function useAsyncData<T>(load: () => Promise<T>): UseAsyncDataResult<T> {
   const [reloadCount, setReloadCount] = useState(0);
+
   const [state, setState] = useState<AsyncState<T>>({
     status: 'idle',
     data: null,
@@ -15,19 +16,19 @@ export function useAsyncData<T>(load: () => Promise<T>): UseAsyncDataResult<T> {
   });
 
   const reload = useCallback(() => {
-    setReloadCount((count) => count + 1);
-  }, []);
-
-  useEffect(() => {
-    let isActive = true;
-
     setState({
       status: 'loading',
       data: null,
       error: null,
     });
 
-    load()
+    setReloadCount((count) => count + 1);
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    void load()
       .then((data) => {
         if (!isActive) {
           return;

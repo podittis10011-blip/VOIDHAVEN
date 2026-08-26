@@ -9,12 +9,7 @@ interface StatePanelProps {
   action?: ReactNode;
 }
 
-export function StatePanel({
-  variant,
-  title,
-  description,
-  action,
-}: StatePanelProps) {
+export function StatePanel({ variant, title, description, action }: StatePanelProps) {
   return (
     <div
       className={`state-panel state-panel--${variant}`}

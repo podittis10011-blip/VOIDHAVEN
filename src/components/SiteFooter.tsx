@@ -32,9 +32,7 @@ export function SiteFooter() {
         </section>
       </div>
 
-      <div className="site-frame site-footer__copyright">
-        © 2026 VOIDHAVEN
-      </div>
+      <div className="site-frame site-footer__copyright">© 2026 VOIDHAVEN</div>
     </footer>
   );
 }

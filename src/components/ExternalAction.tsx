@@ -13,12 +13,7 @@ export function ExternalAction({ href, label }: ExternalActionProps) {
   }
 
   return (
-    <a
-      className="external-action"
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-    >
+    <a className="external-action" href={href} target="_blank" rel="noreferrer">
       {label} <span aria-hidden="true">↗</span>
     </a>
   );
