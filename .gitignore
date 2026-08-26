@@ -22,3 +22,42 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# 本地私有规范与个人开发日志：禁止提交到远程仓库
+/docs/spec/
+/README-DevelopmentLog
+
+# 未来真实环境配置与密钥：禁止提交
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# 依赖与构建产物
+node_modules/
+dist/
+coverage/
+
+# 本地环境变量与密钥
+.env
+.env.*
+!.env.example
+
+# 测试运行产物
+playwright-report/
+test-results/
+blob-report/
+
+# 日志与缓存
+*.log
+npm-debug.log*
+vite-debug.log*
+.vite/
+.cache/
+*.tsbuildinfo
+
+# 操作系统生成文件
+.DS_Store
+Thumbs.db
+Desktop.ini

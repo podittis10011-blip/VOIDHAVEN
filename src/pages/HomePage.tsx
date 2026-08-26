@@ -1,3 +1,5 @@
+// 主页页面
+
 export function HomePage() {
   return (
     <section className="page page--centered" aria-labelledby="home-title">

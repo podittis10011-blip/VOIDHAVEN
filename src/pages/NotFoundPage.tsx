@@ -1,3 +1,5 @@
+// 异常跳转，例如：输入错误url地址导致找不到页面跳转“NotFoundPage”
+
 import { Link } from 'react-router-dom';
 
 export function NotFoundPage() {

@@ -1,9 +1,13 @@
+// CompetitionDetail 被转换为 CompetitionSummary 后才返回列表，避免列表页面意外依赖详情字段。
+// 竞赛排序集中在 Service 内部，而不是复制到每个页面。
+// createMockCompetitionService({ delayMs: 300 }) 或 { fail: true } 能在不改页面逻辑的情况下，制造 Loading 与 Error 场景。
+
 import type {
   CompetitionDetail,
   CompetitionStatus,
   CompetitionSummary,
-  TeamDetail,
-  TeamSummary,
+  //   TeamDetail,
+  //   TeamSummary,
 } from '../types/domain';
 import type {
   CompetitionListQuery,
@@ -56,8 +60,7 @@ function applyLimit<T>(items: T[], limit?: number): T[] {
 }
 
 function compareCompetition(a: CompetitionSummary, b: CompetitionSummary): number {
-  const statusDifference =
-    competitionStatusOrder[a.status] - competitionStatusOrder[b.status];
+  const statusDifference = competitionStatusOrder[a.status] - competitionStatusOrder[b.status];
 
   if (statusDifference !== 0) {
     return statusDifference;
@@ -69,9 +72,7 @@ function compareCompetition(a: CompetitionSummary, b: CompetitionSummary): numbe
   return aDeadline.localeCompare(bDeadline) || a.name.localeCompare(b.name, 'zh-CN');
 }
 
-export function createMockCompetitionService(
-  options: MockServiceOptions = {},
-): CompetitionService {
+export function createMockCompetitionService(options: MockServiceOptions = {}): CompetitionService {
   return {
     async list(query: CompetitionListQuery = {}) {
       const filtered = competitionFixtures

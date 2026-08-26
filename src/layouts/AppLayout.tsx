@@ -1,3 +1,6 @@
+// 全站共同外壳。现在只包含主内容区域和“跳至主要内容”链接；后续 Header 与 Footer 会放进这里
+// 所有页面共有的结构
+
 import { Outlet } from 'react-router-dom';
 
 export function AppLayout() {
