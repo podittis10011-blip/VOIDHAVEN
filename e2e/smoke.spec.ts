@@ -6,7 +6,13 @@ test('home page renders Mock information and fallback route works', async ({ pag
   await expect(page).toHaveTitle(/VOIDHAVEN/);
   await expect(page.getByRole('heading', { name: 'A haven for seekers.' })).toBeVisible();
 
-  await expect(page.getByText('2026 全国大学生数学建模竞赛')).toBeVisible();
+  await expect(
+    page.getByRole('heading', {
+      name: '2026 全国大学生数学建模竞赛',
+      level: 3,
+    }),
+  ).toBeVisible();
+  
   await expect(page.getByText('团队找成员 · 开放中')).toBeVisible();
 
   await expect(page.getByRole('link', { name: '查看全部竞赛' })).toHaveAttribute(
@@ -34,5 +40,5 @@ test('mobile navigation can be opened and used', async ({ page }, testInfo) => {
 
   await navigation.getByRole('link', { name: '竞赛' }).click();
 
-  await expect(page.getByRole('heading', { name: '竞赛' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /^竞赛$/ })).toBeVisible();
 });

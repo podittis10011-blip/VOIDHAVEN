@@ -15,7 +15,12 @@ describe('HomePage', () => {
 
     expect(screen.getByRole('link', { name: '浏览竞赛' })).toHaveAttribute('href', '/competitions');
 
-    expect(await screen.findByText('2026 全国大学生数学建模竞赛')).toBeInTheDocument();
+    expect(
+      await screen.findByRole('heading', {
+        name: '2026 全国大学生数学建模竞赛',
+        level: 3,
+      }),
+    ).toBeInTheDocument();
 
     expect(await screen.findByText('团队找成员 · 开放中')).toBeInTheDocument();
 
