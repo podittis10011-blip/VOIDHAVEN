@@ -7,8 +7,8 @@ export function HomePage() {
         <span>VOIDHAVEN</span>
       </h1>
       <p className="page-intro">
-        为探索者连接竞赛、项目与协作机会。当前仅完成工程骨架，下一阶段将接入前端 Mock
-        Data Contract。
+        为探索者连接竞赛、项目与协作机会。当前仅完成工程骨架，下一阶段将接入前端 Mock Data
+        Contract。
       </p>
     </section>
   );
